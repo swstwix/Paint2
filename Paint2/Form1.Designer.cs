@@ -35,17 +35,18 @@
             this.Line2Button = new System.Windows.Forms.Button();
             this.Line1Button = new System.Windows.Forms.Button();
             this.ZoomPanel = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.ZoomDecButton = new System.Windows.Forms.Button();
+            this.ZoomIncButton = new System.Windows.Forms.Button();
             this.DrawPanel = new System.Windows.Forms.Panel();
             this.ActionsPanel.SuspendLayout();
-            this.ZoomPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // ActionsPanel
             // 
             this.ActionsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ActionsPanel.Controls.Add(this.ZoomDecButton);
             this.ActionsPanel.Controls.Add(this.button5);
+            this.ActionsPanel.Controls.Add(this.ZoomIncButton);
             this.ActionsPanel.Controls.Add(this.EllipseButton);
             this.ActionsPanel.Controls.Add(this.CirlceButton);
             this.ActionsPanel.Controls.Add(this.Line2Button);
@@ -90,6 +91,7 @@
             this.Line2Button.TabIndex = 1;
             this.Line2Button.Text = "Line2";
             this.Line2Button.UseVisualStyleBackColor = true;
+            this.Line2Button.Click += new System.EventHandler(this.Line2ButtonClick);
             // 
             // Line1Button
             // 
@@ -104,41 +106,40 @@
             // ZoomPanel
             // 
             this.ZoomPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ZoomPanel.Controls.Add(this.button8);
-            this.ZoomPanel.Controls.Add(this.button7);
             this.ZoomPanel.Location = new System.Drawing.Point(12, 185);
             this.ZoomPanel.Name = "ZoomPanel";
             this.ZoomPanel.Size = new System.Drawing.Size(200, 177);
             this.ZoomPanel.TabIndex = 1;
             // 
-            // button8
+            // ZoomDecButton
             // 
-            this.button8.Location = new System.Drawing.Point(173, 32);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(24, 23);
-            this.button8.TabIndex = 1;
-            this.button8.Text = "-";
-            this.button8.UseVisualStyleBackColor = true;
+            this.ZoomDecButton.Enabled = false;
+            this.ZoomDecButton.Location = new System.Drawing.Point(171, 139);
+            this.ZoomDecButton.Name = "ZoomDecButton";
+            this.ZoomDecButton.Size = new System.Drawing.Size(24, 23);
+            this.ZoomDecButton.TabIndex = 1;
+            this.ZoomDecButton.Text = "-";
+            this.ZoomDecButton.UseVisualStyleBackColor = true;
+            this.ZoomDecButton.Click += new System.EventHandler(this.ZoomDecButtonClick);
             // 
-            // button7
+            // ZoomIncButton
             // 
-            this.button7.Location = new System.Drawing.Point(173, 3);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(24, 23);
-            this.button7.TabIndex = 0;
-            this.button7.Text = "+";
-            this.button7.UseVisualStyleBackColor = true;
+            this.ZoomIncButton.Location = new System.Drawing.Point(171, 110);
+            this.ZoomIncButton.Name = "ZoomIncButton";
+            this.ZoomIncButton.Size = new System.Drawing.Size(24, 23);
+            this.ZoomIncButton.TabIndex = 0;
+            this.ZoomIncButton.Text = "+";
+            this.ZoomIncButton.UseVisualStyleBackColor = true;
+            this.ZoomIncButton.Click += new System.EventHandler(this.ZoomIncButtonClick);
             // 
             // DrawPanel
             // 
             this.DrawPanel.AutoScroll = true;
+            this.DrawPanel.BackColor = System.Drawing.SystemColors.Window;
             this.DrawPanel.Location = new System.Drawing.Point(218, 12);
             this.DrawPanel.Name = "DrawPanel";
             this.DrawPanel.Size = new System.Drawing.Size(416, 350);
             this.DrawPanel.TabIndex = 2;
-            this.DrawPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DrawPanelMouseDown);
-            this.DrawPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DrawPanelMouseMove);
-            this.DrawPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DrawPanelMouseUp);
             // 
             // Form1
             // 
@@ -151,7 +152,6 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.ActionsPanel.ResumeLayout(false);
-            this.ZoomPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -165,8 +165,8 @@
         private System.Windows.Forms.Button Line2Button;
         private System.Windows.Forms.Button Line1Button;
         private System.Windows.Forms.Panel ZoomPanel;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button ZoomDecButton;
+        private System.Windows.Forms.Button ZoomIncButton;
         private System.Windows.Forms.Panel DrawPanel;
     }
 }

@@ -22,6 +22,8 @@ namespace Tools
         {
         }
 
-        public IGraphics Graphics { get; set; }
+        public void Draw(IGraphics graphics)
+        {
+        }
     }
 }

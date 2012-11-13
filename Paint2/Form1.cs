@@ -20,7 +20,7 @@ namespace Paint2
         public Form1()
         {
             InitializeComponent();
-            outputPanel = new OutputPanel();
+            outputPanel = new OutputPanel(tools);
             DrawPanel.Controls.Add(outputPanel);
             outputPanel.Width = DrawPanel.Width;
             outputPanel.Height = DrawPanel.Height;
@@ -29,24 +29,29 @@ namespace Paint2
 
         private void Line1ButtonClick(object sender, EventArgs e)
         {
+            tools.Add(new Line1Tool());
             Invalidate(true);
         }
 
-        private void DrawPanelMouseDown(object sender, MouseEventArgs e)
+        private void ZoomIncButtonClick(object sender, EventArgs e)
         {
-            tools.Last().OnMouseClick(e.X, e.Y);
+            ZoomDecButton.Enabled = true;
+            var needDisable = outputPanel.IncZoom();
+            ZoomIncButton.Enabled = !needDisable;
             Invalidate(true);
         }
 
-        private void DrawPanelMouseUp(object sender, MouseEventArgs e)
+        private void ZoomDecButtonClick(object sender, EventArgs e)
         {
-            tools.Last().OnMouseClicked(e.X, e.Y);
+            ZoomIncButton.Enabled = true;
+            var needDisable = outputPanel.DecZoom();
+            ZoomDecButton.Enabled = !needDisable;
             Invalidate(true);
         }
 
-        private void DrawPanelMouseMove(object sender, MouseEventArgs e)
+        private void Line2ButtonClick(object sender, EventArgs e)
         {
-            tools.Last().OnMouseMoved(e.X, e.Y);
+            tools.Add(new Line2Tool());
             Invalidate(true);
         }
 
