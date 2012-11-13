@@ -30,7 +30,7 @@
         {
             this.ActionsPanel = new System.Windows.Forms.Panel();
             this.ZoomPanel = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.DrawPanel = new System.Windows.Forms.Panel();
             this.Line1Button = new System.Windows.Forms.Button();
             this.Line2Button = new System.Windows.Forms.Button();
             this.CirlceButton = new System.Windows.Forms.Button();
@@ -65,13 +65,13 @@
             this.ZoomPanel.Size = new System.Drawing.Size(200, 177);
             this.ZoomPanel.TabIndex = 1;
             // 
-            // panel3
+            // DrawPanel
             // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Location = new System.Drawing.Point(218, 12);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(416, 350);
-            this.panel3.TabIndex = 2;
+            this.DrawPanel.AutoScroll = true;
+            this.DrawPanel.Location = new System.Drawing.Point(218, 12);
+            this.DrawPanel.Name = "DrawPanel";
+            this.DrawPanel.Size = new System.Drawing.Size(416, 350);
+            this.DrawPanel.TabIndex = 2;
             // 
             // Line1Button
             // 
@@ -81,6 +81,7 @@
             this.Line1Button.TabIndex = 0;
             this.Line1Button.Text = "Line1";
             this.Line1Button.UseVisualStyleBackColor = true;
+            this.Line1Button.Click += new System.EventHandler(this.Line1ButtonClick);
             // 
             // Line2Button
             // 
@@ -141,7 +142,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(646, 374);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.DrawPanel);
             this.Controls.Add(this.ZoomPanel);
             this.Controls.Add(this.ActionsPanel);
             this.Name = "Form1";
@@ -163,7 +164,7 @@
         private System.Windows.Forms.Panel ZoomPanel;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel DrawPanel;
     }
 }
 
