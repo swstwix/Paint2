@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.ActionsPanel = new System.Windows.Forms.Panel();
-            this.ZoomPanel = new System.Windows.Forms.Panel();
-            this.DrawPanel = new System.Windows.Forms.Panel();
-            this.Line1Button = new System.Windows.Forms.Button();
-            this.Line2Button = new System.Windows.Forms.Button();
-            this.CirlceButton = new System.Windows.Forms.Button();
-            this.EllipseButton = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.EllipseButton = new System.Windows.Forms.Button();
+            this.CirlceButton = new System.Windows.Forms.Button();
+            this.Line2Button = new System.Windows.Forms.Button();
+            this.Line1Button = new System.Windows.Forms.Button();
+            this.ZoomPanel = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.DrawPanel = new System.Windows.Forms.Panel();
             this.ActionsPanel.SuspendLayout();
             this.ZoomPanel.SuspendLayout();
             this.SuspendLayout();
@@ -55,23 +55,41 @@
             this.ActionsPanel.Size = new System.Drawing.Size(200, 167);
             this.ActionsPanel.TabIndex = 0;
             // 
-            // ZoomPanel
+            // button5
             // 
-            this.ZoomPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ZoomPanel.Controls.Add(this.button8);
-            this.ZoomPanel.Controls.Add(this.button7);
-            this.ZoomPanel.Location = new System.Drawing.Point(12, 185);
-            this.ZoomPanel.Name = "ZoomPanel";
-            this.ZoomPanel.Size = new System.Drawing.Size(200, 177);
-            this.ZoomPanel.TabIndex = 1;
+            this.button5.Location = new System.Drawing.Point(4, 141);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "Clear";
+            this.button5.UseVisualStyleBackColor = true;
             // 
-            // DrawPanel
+            // EllipseButton
             // 
-            this.DrawPanel.AutoScroll = true;
-            this.DrawPanel.Location = new System.Drawing.Point(218, 12);
-            this.DrawPanel.Name = "DrawPanel";
-            this.DrawPanel.Size = new System.Drawing.Size(416, 350);
-            this.DrawPanel.TabIndex = 2;
+            this.EllipseButton.Location = new System.Drawing.Point(86, 33);
+            this.EllipseButton.Name = "EllipseButton";
+            this.EllipseButton.Size = new System.Drawing.Size(75, 23);
+            this.EllipseButton.TabIndex = 3;
+            this.EllipseButton.Text = "Ellipse";
+            this.EllipseButton.UseVisualStyleBackColor = true;
+            // 
+            // CirlceButton
+            // 
+            this.CirlceButton.Location = new System.Drawing.Point(4, 33);
+            this.CirlceButton.Name = "CirlceButton";
+            this.CirlceButton.Size = new System.Drawing.Size(75, 23);
+            this.CirlceButton.TabIndex = 2;
+            this.CirlceButton.Text = "Circle";
+            this.CirlceButton.UseVisualStyleBackColor = true;
+            // 
+            // Line2Button
+            // 
+            this.Line2Button.Location = new System.Drawing.Point(84, 3);
+            this.Line2Button.Name = "Line2Button";
+            this.Line2Button.Size = new System.Drawing.Size(75, 23);
+            this.Line2Button.TabIndex = 1;
+            this.Line2Button.Text = "Line2";
+            this.Line2Button.UseVisualStyleBackColor = true;
             // 
             // Line1Button
             // 
@@ -83,41 +101,24 @@
             this.Line1Button.UseVisualStyleBackColor = true;
             this.Line1Button.Click += new System.EventHandler(this.Line1ButtonClick);
             // 
-            // Line2Button
+            // ZoomPanel
             // 
-            this.Line2Button.Location = new System.Drawing.Point(84, 3);
-            this.Line2Button.Name = "Line2Button";
-            this.Line2Button.Size = new System.Drawing.Size(75, 23);
-            this.Line2Button.TabIndex = 1;
-            this.Line2Button.Text = "Line2";
-            this.Line2Button.UseVisualStyleBackColor = true;
+            this.ZoomPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ZoomPanel.Controls.Add(this.button8);
+            this.ZoomPanel.Controls.Add(this.button7);
+            this.ZoomPanel.Location = new System.Drawing.Point(12, 185);
+            this.ZoomPanel.Name = "ZoomPanel";
+            this.ZoomPanel.Size = new System.Drawing.Size(200, 177);
+            this.ZoomPanel.TabIndex = 1;
             // 
-            // CirlceButton
+            // button8
             // 
-            this.CirlceButton.Location = new System.Drawing.Point(4, 33);
-            this.CirlceButton.Name = "CirlceButton";
-            this.CirlceButton.Size = new System.Drawing.Size(75, 23);
-            this.CirlceButton.TabIndex = 2;
-            this.CirlceButton.Text = "Circle";
-            this.CirlceButton.UseVisualStyleBackColor = true;
-            // 
-            // EllipseButton
-            // 
-            this.EllipseButton.Location = new System.Drawing.Point(86, 33);
-            this.EllipseButton.Name = "EllipseButton";
-            this.EllipseButton.Size = new System.Drawing.Size(75, 23);
-            this.EllipseButton.TabIndex = 3;
-            this.EllipseButton.Text = "Ellipse";
-            this.EllipseButton.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(4, 141);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Clear";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button8.Location = new System.Drawing.Point(173, 32);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(24, 23);
+            this.button8.TabIndex = 1;
+            this.button8.Text = "-";
+            this.button8.UseVisualStyleBackColor = true;
             // 
             // button7
             // 
@@ -128,14 +129,16 @@
             this.button7.Text = "+";
             this.button7.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // DrawPanel
             // 
-            this.button8.Location = new System.Drawing.Point(173, 32);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(24, 23);
-            this.button8.TabIndex = 1;
-            this.button8.Text = "-";
-            this.button8.UseVisualStyleBackColor = true;
+            this.DrawPanel.AutoScroll = true;
+            this.DrawPanel.Location = new System.Drawing.Point(218, 12);
+            this.DrawPanel.Name = "DrawPanel";
+            this.DrawPanel.Size = new System.Drawing.Size(416, 350);
+            this.DrawPanel.TabIndex = 2;
+            this.DrawPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DrawPanelMouseDown);
+            this.DrawPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DrawPanelMouseMove);
+            this.DrawPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DrawPanelMouseUp);
             // 
             // Form1
             // 
