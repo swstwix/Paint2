@@ -38,12 +38,14 @@
             this.Line1Button = new System.Windows.Forms.Button();
             this.ZoomPanel = new System.Windows.Forms.Panel();
             this.DrawPanel = new System.Windows.Forms.Panel();
+            this.PolygonButton = new System.Windows.Forms.Button();
             this.ActionsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // ActionsPanel
             // 
             this.ActionsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ActionsPanel.Controls.Add(this.PolygonButton);
             this.ActionsPanel.Controls.Add(this.ZoomDecButton);
             this.ActionsPanel.Controls.Add(this.button5);
             this.ActionsPanel.Controls.Add(this.ZoomIncButton);
@@ -143,6 +145,16 @@
             this.DrawPanel.Size = new System.Drawing.Size(416, 350);
             this.DrawPanel.TabIndex = 2;
             // 
+            // PolygonButton
+            // 
+            this.PolygonButton.Location = new System.Drawing.Point(4, 62);
+            this.PolygonButton.Name = "PolygonButton";
+            this.PolygonButton.Size = new System.Drawing.Size(75, 23);
+            this.PolygonButton.TabIndex = 0;
+            this.PolygonButton.Text = "Polygon";
+            this.PolygonButton.UseVisualStyleBackColor = true;
+            this.PolygonButton.Click += new System.EventHandler(this.PolygonClick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -170,6 +182,7 @@
         private System.Windows.Forms.Button ZoomDecButton;
         private System.Windows.Forms.Button ZoomIncButton;
         private System.Windows.Forms.Panel DrawPanel;
+        private System.Windows.Forms.Button PolygonButton;
     }
 }
 

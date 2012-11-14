@@ -47,6 +47,7 @@
     <Compile Include="Interfaces\IPaintTool.cs" />
     <Compile Include="Line1Tool.cs" />
     <Compile Include="Line2Tool.cs" />
+    <Compile Include="PolygonTool.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -67,5 +67,11 @@ namespace Paint2
             Invalidate(true);
         }
 
+        private void PolygonClick(object sender, EventArgs e)
+        {
+            tools.Add(new PolygonTool());
+            Invalidate(true);
+        }
+
     }
 }
