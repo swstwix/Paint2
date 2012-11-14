@@ -40,11 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CircleTool.cs" />
+    <Compile Include="EllipseTool.cs" />
     <Compile Include="EmptyTool.cs" />
     <Compile Include="Interfaces\IGraphics.cs" />
     <Compile Include="Interfaces\IPaintTool.cs" />
-    <Compile Include="Interfaces\Line1Tool.cs" />
-    <Compile Include="Interfaces\Line2Tool.cs" />
+    <Compile Include="Line1Tool.cs" />
+    <Compile Include="Line2Tool.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

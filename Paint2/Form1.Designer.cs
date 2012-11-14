@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.ActionsPanel = new System.Windows.Forms.Panel();
+            this.ZoomDecButton = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.ZoomIncButton = new System.Windows.Forms.Button();
             this.EllipseButton = new System.Windows.Forms.Button();
             this.CirlceButton = new System.Windows.Forms.Button();
             this.Line2Button = new System.Windows.Forms.Button();
             this.Line1Button = new System.Windows.Forms.Button();
             this.ZoomPanel = new System.Windows.Forms.Panel();
-            this.ZoomDecButton = new System.Windows.Forms.Button();
-            this.ZoomIncButton = new System.Windows.Forms.Button();
             this.DrawPanel = new System.Windows.Forms.Panel();
             this.ActionsPanel.SuspendLayout();
             this.SuspendLayout();
@@ -56,6 +56,17 @@
             this.ActionsPanel.Size = new System.Drawing.Size(200, 167);
             this.ActionsPanel.TabIndex = 0;
             // 
+            // ZoomDecButton
+            // 
+            this.ZoomDecButton.Enabled = false;
+            this.ZoomDecButton.Location = new System.Drawing.Point(171, 139);
+            this.ZoomDecButton.Name = "ZoomDecButton";
+            this.ZoomDecButton.Size = new System.Drawing.Size(24, 23);
+            this.ZoomDecButton.TabIndex = 1;
+            this.ZoomDecButton.Text = "-";
+            this.ZoomDecButton.UseVisualStyleBackColor = true;
+            this.ZoomDecButton.Click += new System.EventHandler(this.ZoomDecButtonClick);
+            // 
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(4, 141);
@@ -65,6 +76,16 @@
             this.button5.Text = "Clear";
             this.button5.UseVisualStyleBackColor = true;
             // 
+            // ZoomIncButton
+            // 
+            this.ZoomIncButton.Location = new System.Drawing.Point(171, 110);
+            this.ZoomIncButton.Name = "ZoomIncButton";
+            this.ZoomIncButton.Size = new System.Drawing.Size(24, 23);
+            this.ZoomIncButton.TabIndex = 0;
+            this.ZoomIncButton.Text = "+";
+            this.ZoomIncButton.UseVisualStyleBackColor = true;
+            this.ZoomIncButton.Click += new System.EventHandler(this.ZoomIncButtonClick);
+            // 
             // EllipseButton
             // 
             this.EllipseButton.Location = new System.Drawing.Point(86, 33);
@@ -73,6 +94,7 @@
             this.EllipseButton.TabIndex = 3;
             this.EllipseButton.Text = "Ellipse";
             this.EllipseButton.UseVisualStyleBackColor = true;
+            this.EllipseButton.Click += new System.EventHandler(this.EllipseButtonClick);
             // 
             // CirlceButton
             // 
@@ -82,6 +104,7 @@
             this.CirlceButton.TabIndex = 2;
             this.CirlceButton.Text = "Circle";
             this.CirlceButton.UseVisualStyleBackColor = true;
+            this.CirlceButton.Click += new System.EventHandler(this.CirlceButtonClick);
             // 
             // Line2Button
             // 
@@ -110,27 +133,6 @@
             this.ZoomPanel.Name = "ZoomPanel";
             this.ZoomPanel.Size = new System.Drawing.Size(200, 177);
             this.ZoomPanel.TabIndex = 1;
-            // 
-            // ZoomDecButton
-            // 
-            this.ZoomDecButton.Enabled = false;
-            this.ZoomDecButton.Location = new System.Drawing.Point(171, 139);
-            this.ZoomDecButton.Name = "ZoomDecButton";
-            this.ZoomDecButton.Size = new System.Drawing.Size(24, 23);
-            this.ZoomDecButton.TabIndex = 1;
-            this.ZoomDecButton.Text = "-";
-            this.ZoomDecButton.UseVisualStyleBackColor = true;
-            this.ZoomDecButton.Click += new System.EventHandler(this.ZoomDecButtonClick);
-            // 
-            // ZoomIncButton
-            // 
-            this.ZoomIncButton.Location = new System.Drawing.Point(171, 110);
-            this.ZoomIncButton.Name = "ZoomIncButton";
-            this.ZoomIncButton.Size = new System.Drawing.Size(24, 23);
-            this.ZoomIncButton.TabIndex = 0;
-            this.ZoomIncButton.Text = "+";
-            this.ZoomIncButton.UseVisualStyleBackColor = true;
-            this.ZoomIncButton.Click += new System.EventHandler(this.ZoomIncButtonClick);
             // 
             // DrawPanel
             // 

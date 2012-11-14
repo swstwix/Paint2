@@ -55,5 +55,17 @@ namespace Paint2
             Invalidate(true);
         }
 
+        private void CirlceButtonClick(object sender, EventArgs e)
+        {
+            tools.Add(new CircleTool());
+            Invalidate(true);
+        }
+
+        private void EllipseButtonClick(object sender, EventArgs e)
+        {
+            tools.Add(new EllipseTool());
+            Invalidate(true);
+        }
+
     }
 }
