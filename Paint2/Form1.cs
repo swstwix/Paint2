@@ -73,5 +73,12 @@ namespace Paint2
             Invalidate(true);
         }
 
+        private void ClearButtonClick(object sender, EventArgs e)
+        {
+            tools.Clear();
+            tools.Add(new EmptyTool());
+            Invalidate(true);
+        }
+
     }
 }

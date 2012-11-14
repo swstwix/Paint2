@@ -15,6 +15,8 @@ namespace Tools
                 return;
             x0 = x;
             y0 = y;
+            x1 = x;
+            y1 = y;
             afterMouseClick = true;
         }
 

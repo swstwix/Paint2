@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.ActionsPanel = new System.Windows.Forms.Panel();
+            this.PolygonButton = new System.Windows.Forms.Button();
             this.ZoomDecButton = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.ClearButton = new System.Windows.Forms.Button();
             this.ZoomIncButton = new System.Windows.Forms.Button();
             this.EllipseButton = new System.Windows.Forms.Button();
             this.CirlceButton = new System.Windows.Forms.Button();
@@ -38,7 +39,6 @@
             this.Line1Button = new System.Windows.Forms.Button();
             this.ZoomPanel = new System.Windows.Forms.Panel();
             this.DrawPanel = new System.Windows.Forms.Panel();
-            this.PolygonButton = new System.Windows.Forms.Button();
             this.ActionsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +47,7 @@
             this.ActionsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ActionsPanel.Controls.Add(this.PolygonButton);
             this.ActionsPanel.Controls.Add(this.ZoomDecButton);
-            this.ActionsPanel.Controls.Add(this.button5);
+            this.ActionsPanel.Controls.Add(this.ClearButton);
             this.ActionsPanel.Controls.Add(this.ZoomIncButton);
             this.ActionsPanel.Controls.Add(this.EllipseButton);
             this.ActionsPanel.Controls.Add(this.CirlceButton);
@@ -57,6 +57,16 @@
             this.ActionsPanel.Name = "ActionsPanel";
             this.ActionsPanel.Size = new System.Drawing.Size(200, 167);
             this.ActionsPanel.TabIndex = 0;
+            // 
+            // PolygonButton
+            // 
+            this.PolygonButton.Location = new System.Drawing.Point(4, 62);
+            this.PolygonButton.Name = "PolygonButton";
+            this.PolygonButton.Size = new System.Drawing.Size(75, 23);
+            this.PolygonButton.TabIndex = 0;
+            this.PolygonButton.Text = "Polygon";
+            this.PolygonButton.UseVisualStyleBackColor = true;
+            this.PolygonButton.Click += new System.EventHandler(this.PolygonClick);
             // 
             // ZoomDecButton
             // 
@@ -69,14 +79,15 @@
             this.ZoomDecButton.UseVisualStyleBackColor = true;
             this.ZoomDecButton.Click += new System.EventHandler(this.ZoomDecButtonClick);
             // 
-            // button5
+            // ClearButton
             // 
-            this.button5.Location = new System.Drawing.Point(4, 141);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Clear";
-            this.button5.UseVisualStyleBackColor = true;
+            this.ClearButton.Location = new System.Drawing.Point(4, 141);
+            this.ClearButton.Name = "ClearButton";
+            this.ClearButton.Size = new System.Drawing.Size(75, 23);
+            this.ClearButton.TabIndex = 4;
+            this.ClearButton.Text = "Clear";
+            this.ClearButton.UseVisualStyleBackColor = true;
+            this.ClearButton.Click += new System.EventHandler(this.ClearButtonClick);
             // 
             // ZoomIncButton
             // 
@@ -145,16 +156,6 @@
             this.DrawPanel.Size = new System.Drawing.Size(416, 350);
             this.DrawPanel.TabIndex = 2;
             // 
-            // PolygonButton
-            // 
-            this.PolygonButton.Location = new System.Drawing.Point(4, 62);
-            this.PolygonButton.Name = "PolygonButton";
-            this.PolygonButton.Size = new System.Drawing.Size(75, 23);
-            this.PolygonButton.TabIndex = 0;
-            this.PolygonButton.Text = "Polygon";
-            this.PolygonButton.UseVisualStyleBackColor = true;
-            this.PolygonButton.Click += new System.EventHandler(this.PolygonClick);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -173,7 +174,7 @@
         #endregion
 
         private System.Windows.Forms.Panel ActionsPanel;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button ClearButton;
         private System.Windows.Forms.Button EllipseButton;
         private System.Windows.Forms.Button CirlceButton;
         private System.Windows.Forms.Button Line2Button;
