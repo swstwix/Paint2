@@ -37,7 +37,7 @@ namespace Tools
             y1 = y;
         }
 
-        public void Draw(IGraphics graphics)
+        public void Draw(IPixelSet pixelSet)
         {
             if (!afterMouseClick)
                 return;
@@ -50,9 +50,9 @@ namespace Tools
             int error = deltaX - deltaY;
             //
             if (afterMouseClicked)
-                graphics.DrawPixel(x1, y1);
+                pixelSet.DrawPixel(x1, y1);
             else
-                graphics.DrawPreviewPixel(x1, y1);
+                pixelSet.DrawPreviewPixel(x1, y1);
 
             int x2 = x0;
             int y2 = y0;
@@ -60,9 +60,9 @@ namespace Tools
             while (x2 != x1 || y2 != y1)
             {
                 if (afterMouseClicked)
-                    graphics.DrawPixel(x2, y2);
+                    pixelSet.DrawPixel(x2, y2);
                 else
-                    graphics.DrawPreviewPixel(x2, y2);
+                    pixelSet.DrawPreviewPixel(x2, y2);
 
                 int error2 = error * 2;
                 //

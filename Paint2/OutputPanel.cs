@@ -23,7 +23,7 @@ namespace Paint2
         protected override void OnPaint(PaintEventArgs e)
         {
             var g = e.Graphics;
-            var proxyGraphics = new ProxyGraphics(g, zoom, Width, Height);
+            var proxyGraphics = new ProxyPixelSet(g, zoom, Width, Height);
             foreach (var tool in paintTools)
                 tool.Draw(proxyGraphics);
         }

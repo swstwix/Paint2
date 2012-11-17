@@ -1,6 +1,6 @@
 namespace Tools.Interfaces
 {
-    public interface IGraphics
+    public interface IPixelSet
     {
         void DrawPixel(int x, int y);
         void DrawPreviewPixel(int x, int y);

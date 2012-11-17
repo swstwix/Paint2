@@ -37,7 +37,7 @@ namespace Tools
             y1 = y;
         }
 
-        public void Draw(IGraphics graphics)
+        public void Draw(IPixelSet pixelSet)
         {
             if (!afterMouseClick)
                 return;
@@ -54,9 +54,9 @@ namespace Tools
                     int x = i;
                     int y = (b == 0) ? y0 : (-c - a * i) / b ;
                     if (afterMouseClicked)
-                        graphics.DrawPixel(x, y);
+                        pixelSet.DrawPixel(x, y);
                     else
-                        graphics.DrawPreviewPixel(x, y);
+                        pixelSet.DrawPreviewPixel(x, y);
                 }
             }
             else
@@ -67,9 +67,9 @@ namespace Tools
                     int x = (a == 0) ? x0 : (-c - b * i) / a;
                     int y = i;
                     if (afterMouseClicked)
-                        graphics.DrawPixel(x, y);
+                        pixelSet.DrawPixel(x, y);
                     else
-                        graphics.DrawPreviewPixel(x, y);
+                        pixelSet.DrawPreviewPixel(x, y);
                 }
             }
         }

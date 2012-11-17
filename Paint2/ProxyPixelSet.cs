@@ -21,7 +21,7 @@ namespace Paint2
         }
     }  
 
-    public class ProxyGraphics : IGraphics
+    public class ProxyPixelSet : IPixelSet
     {
         private readonly int zoom;
         private readonly Graphics graphics;
@@ -29,7 +29,7 @@ namespace Paint2
         private readonly int maxY;
         private readonly HashSet<Point> hashSet;
 
-        public ProxyGraphics(Graphics g, int zoom, int width, int height)
+        public ProxyPixelSet(Graphics g, int zoom, int width, int height)
         {
             this.zoom = zoom;
             this.graphics = g;

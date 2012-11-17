@@ -6,6 +6,6 @@ namespace Tools.Interfaces
         void OnMouseClicked(int x, int y);
         void OnMouseMoved(int x, int y);
 
-        void Draw(IGraphics graphics);
+        void Draw(IPixelSet pixelSet);
     }
 }
