@@ -9,40 +9,40 @@ using Tools.Interfaces;
 
 namespace Paint2
 {
-    public sealed class OutputPanel : Panel
+    public sealed class OutputPanel : Panel, IDrawingArea
     {
-        private readonly IList<IPaintTool> tools;
         private int zoom = 1;
+        private readonly IPaintToolsCollection paintTools;
 
-        public OutputPanel(IList<IPaintTool> tools)
+        public OutputPanel(IPaintToolsCollection paintToolsCollection)
         {
-            DoubleBuffered = true;
-            this.tools = tools;
+            this.DoubleBuffered = true;
+            this.paintTools = paintToolsCollection;
         }
 
         protected override void OnPaint(PaintEventArgs e)
         {
             var g = e.Graphics;
-            var proxyGraphics = new ProxyGraphics(g, zoom);
-            foreach(var tool in tools)
+            var proxyGraphics = new ProxyGraphics(g, zoom, Width, Height);
+            foreach (var tool in paintTools)
                 tool.Draw(proxyGraphics);
         }
 
         protected override void OnMouseUp(MouseEventArgs e)
         {
-            tools.Last().OnMouseClicked(e.X / zoom, e.Y / zoom);
+            paintTools.Current.OnMouseClicked(e.X / zoom, e.Y / zoom);
             Invalidate(true);
         }
 
         protected override void OnMouseDown(MouseEventArgs e)
         {
-            tools.Last().OnMouseClick(e.X / zoom, e.Y / zoom);
+            paintTools.Current.OnMouseClick(e.X / zoom, e.Y / zoom);
             Invalidate(true);
         }
 
         protected override void OnMouseMove(MouseEventArgs e)
         {
-            tools.Last().OnMouseMoved(e.X / zoom, e.Y / zoom);
+            paintTools.Current.OnMouseMoved(e.X / zoom, e.Y / zoom);
             Invalidate(true);
         }
 
@@ -59,8 +59,12 @@ namespace Paint2
             zoom--;
             Width = Width * zoom / (zoom + 1);
             Height = Height * zoom / (zoom + 1);
-            Invalidate(true);
             return zoom == 1;
+        }
+
+        public void Redraw()
+        {
+            Invalidate(false);
         }
     }
 }

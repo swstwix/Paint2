@@ -15,21 +15,21 @@ namespace Paint2
     public partial class Form1 : Form
     {
         private readonly OutputPanel outputPanel;
-        private readonly IList<IPaintTool> tools = new List<IPaintTool>();
+        private readonly IPaintToolsCollection paintToolsCollection = new PaintToolsCollection();
 
         public Form1()
         {
             InitializeComponent();
-            outputPanel = new OutputPanel(tools);
+            outputPanel = new OutputPanel(paintToolsCollection);
             DrawPanel.Controls.Add(outputPanel);
             outputPanel.Width = DrawPanel.Width;
             outputPanel.Height = DrawPanel.Height;
-            tools.Add(new EmptyTool());
+            paintToolsCollection.Add(new EmptyTool());
         }
 
         private void Line1ButtonClick(object sender, EventArgs e)
         {
-            tools.Add(new Line1Tool());
+            paintToolsCollection.Add(new Line1Tool());
             Invalidate(true);
         }
 
@@ -51,32 +51,38 @@ namespace Paint2
 
         private void Line2ButtonClick(object sender, EventArgs e)
         {
-            tools.Add(new Line2Tool());
+            paintToolsCollection.Add(new Line2Tool());
             Invalidate(true);
         }
 
         private void CirlceButtonClick(object sender, EventArgs e)
         {
-            tools.Add(new CircleTool());
+            paintToolsCollection.Add(new CircleTool());
             Invalidate(true);
         }
 
         private void EllipseButtonClick(object sender, EventArgs e)
         {
-            tools.Add(new EllipseTool());
+            paintToolsCollection.Add(new EllipseTool());
             Invalidate(true);
         }
 
         private void PolygonClick(object sender, EventArgs e)
         {
-            tools.Add(new PolygonTool());
+            paintToolsCollection.Add(new PolygonTool());
             Invalidate(true);
         }
 
         private void ClearButtonClick(object sender, EventArgs e)
         {
-            tools.Clear();
-            tools.Add(new EmptyTool());
+            paintToolsCollection.Clear();
+            paintToolsCollection.Add(new EmptyTool());
+            Invalidate(true);
+        }
+
+        private void FillRecursiveButtonClick(object sender, EventArgs e)
+        {
+            paintToolsCollection.Add(new RecursiveFloodFillTool());
             Invalidate(true);
         }
 

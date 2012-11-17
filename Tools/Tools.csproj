@@ -43,12 +43,16 @@
     <Compile Include="CircleTool.cs" />
     <Compile Include="EllipseTool.cs" />
     <Compile Include="EmptyTool.cs" />
+    <Compile Include="Interfaces\IDrawingArea.cs" />
     <Compile Include="Interfaces\IGraphics.cs" />
     <Compile Include="Interfaces\IPaintTool.cs" />
+    <Compile Include="Interfaces\IPaintToolsCollection.cs" />
     <Compile Include="Line1Tool.cs" />
     <Compile Include="Line2Tool.cs" />
+    <Compile Include="PaintToolsCollection.cs" />
     <Compile Include="PolygonTool.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecursiveFloodFillTool.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
