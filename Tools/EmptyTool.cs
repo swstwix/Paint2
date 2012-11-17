@@ -22,7 +22,7 @@ namespace Tools
         {
         }
 
-        public void Draw(IGraphics graphics)
+        public void Draw(IPixelSet pixelSet)
         {
         }
     }

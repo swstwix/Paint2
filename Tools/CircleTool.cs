@@ -34,7 +34,7 @@ namespace Tools
             r = (int)Math.Sqrt(Math.Abs(x - x0) * Math.Abs(x - x0) + Math.Abs(y - y0) * Math.Abs(y - y0));
         }
 
-        public void Draw(IGraphics graphics)
+        public void Draw(IPixelSet pixelSet)
         {
             if (!afterMouseClick)
                 return;
@@ -43,10 +43,10 @@ namespace Tools
             int y = r;
             while (y >= 0)
             {
-                PutPixel(graphics, x0 + x, y0 + y);
-                PutPixel(graphics, x0 + x, y0 - y);
-                PutPixel(graphics, x0 - x, y0 + y);
-                PutPixel(graphics, x0 - x, y0 - y);
+                PutPixel(pixelSet, x0 + x, y0 + y);
+                PutPixel(pixelSet, x0 + x, y0 - y);
+                PutPixel(pixelSet, x0 - x, y0 + y);
+                PutPixel(pixelSet, x0 - x, y0 - y);
                 int error = 2 * (delta + y) - 1;
                 if (delta < 0 && error <= 0)
                 {
@@ -67,7 +67,7 @@ namespace Tools
             }
         }
 
-        private void PutPixel(IGraphics g, int x, int y)
+        private void PutPixel(IPixelSet g, int x, int y)
         {
             if (!afterMouseClicked)
                 g.DrawPreviewPixel(x, y);

@@ -14,7 +14,7 @@ namespace Tools
     {
         private int x0, y0;
         private bool afterClick = false;
-        private IGraphics graphics;
+        private IPixelSet pixelSet;
         private IList<Point> list;
         private Thread thread;
 
@@ -35,9 +35,9 @@ namespace Tools
         {
         }
 
-        public void Draw(IGraphics graphics)
+        public void Draw(IPixelSet pixelSet)
         {
-            this.graphics = graphics;
+            this.pixelSet = pixelSet;
             if (afterClick)
                 if (list == null)
                 {
@@ -46,14 +46,14 @@ namespace Tools
                     thread.Start();
                 }
                 else
-                    DrawStack(graphics);
+                    DrawStack(pixelSet);
         }
 
-        private void DrawStack(IGraphics graphics)
+        private void DrawStack(IPixelSet pixelSet)
         {
             lock (list)
                 foreach (var item in list)
-                    graphics.FillCell(item.X, item.Y);
+                    pixelSet.FillCell(item.X, item.Y);
         }
 
         public void Fill()
@@ -63,13 +63,13 @@ namespace Tools
 
         public void Fill(int x, int y)
         {
-            if (!graphics.CellIsInArea(x, y))
+            if (!pixelSet.CellIsInArea(x, y))
                 return;
-            if (graphics.IsNotFilled(x, y))
+            if (pixelSet.IsNotFilled(x, y))
             {
                 lock (list)
                     list.Add(new Point(x,y));
-                graphics.AddPoint(x, y);
+                pixelSet.AddPoint(x, y);
                 thread.Join(5);
             }
             else

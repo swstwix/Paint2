@@ -44,7 +44,7 @@
     <Compile Include="EllipseTool.cs" />
     <Compile Include="EmptyTool.cs" />
     <Compile Include="Interfaces\IDrawingArea.cs" />
-    <Compile Include="Interfaces\IGraphics.cs" />
+    <Compile Include="Interfaces\IPixelSet.cs" />
     <Compile Include="Interfaces\IPaintTool.cs" />
     <Compile Include="Interfaces\IPaintToolsCollection.cs" />
     <Compile Include="Line1Tool.cs" />

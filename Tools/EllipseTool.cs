@@ -42,7 +42,7 @@ namespace Tools
             b = Math.Abs(y - ym);
         }
 
-        public void Draw(IGraphics graphics)
+        public void Draw(IPixelSet pixelSet)
         {
             if (!afterMouseClick)
                 return;
@@ -60,10 +60,10 @@ namespace Tools
             d = two_a_square * ((row - 1) * (row)) + a_square + two_b_square * (1 - a_square);
             while (a_square * (row) > b_square * (col))
             {
-                PutPixel(graphics, col + x, row + y);
-                PutPixel(graphics, col + x, y - row);
-                PutPixel(graphics, x - col, row + y);
-                PutPixel(graphics, x - col, y - row);
+                PutPixel(pixelSet, col + x, row + y);
+                PutPixel(pixelSet, col + x, y - row);
+                PutPixel(pixelSet, x - col, row + y);
+                PutPixel(pixelSet, x - col, y - row);
                 if (d >= 0)
                 {
                     row--;
@@ -75,10 +75,10 @@ namespace Tools
             d = two_b_square * (col + 1) * col + two_a_square * (row * (row - 2) + 1) + (1 - two_a_square) * b_square;
             while ((row + 1) > 0)
             {
-                PutPixel(graphics, col + x, row + y);
-                PutPixel(graphics, col + x, y - row);
-                PutPixel(graphics, x - col, row + y);
-                PutPixel(graphics, x - col, y - row);
+                PutPixel(pixelSet, col + x, row + y);
+                PutPixel(pixelSet, col + x, y - row);
+                PutPixel(pixelSet, x - col, row + y);
+                PutPixel(pixelSet, x - col, y - row);
                 if (d <= 0)
                 {
                     col++;
@@ -89,7 +89,7 @@ namespace Tools
             }
         }
 
-        private void PutPixel(IGraphics g, int x, int y)
+        private void PutPixel(IPixelSet g, int x, int y)
         {
             if (!afterMouseClicked)
                 g.DrawPreviewPixel(x, y);

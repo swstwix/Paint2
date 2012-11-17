@@ -59,7 +59,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ProxyGraphics.cs" />
+    <Compile Include="ProxyPixelSet.cs" />
     <Compile Include="ProxyGraphicsTest.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
