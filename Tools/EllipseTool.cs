@@ -42,7 +42,7 @@ namespace Tools
             b = Math.Abs(y - ym);
         }
 
-        public void Draw(IPixelSet pixelSet)
+        public void Draw(IPixelSet pixelSet, IDrawingArea drawingArea)
         {
             if (!afterMouseClick)
                 return;

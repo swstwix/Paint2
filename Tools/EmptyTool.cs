@@ -22,7 +22,7 @@ namespace Tools
         {
         }
 
-        public void Draw(IPixelSet pixelSet)
+        public void Draw(IPixelSet pixelSet, IDrawingArea drawingArea)
         {
         }
     }

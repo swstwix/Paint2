@@ -17,6 +17,7 @@ namespace Tools
         private IPixelSet pixelSet;
         private IList<Point> list;
         private Thread thread;
+        private IDrawingArea drawingArea;
 
         public void OnMouseClick(int x, int y)
         {
@@ -35,9 +36,10 @@ namespace Tools
         {
         }
 
-        public void Draw(IPixelSet pixelSet)
+        public void Draw(IPixelSet pixelSet, IDrawingArea drawingArea)
         {
             this.pixelSet = pixelSet;
+            this.drawingArea = drawingArea;
             if (afterClick)
                 if (list == null)
                 {
@@ -46,7 +48,9 @@ namespace Tools
                     thread.Start();
                 }
                 else
+                {
                     DrawStack(pixelSet);
+                }
         }
 
         private void DrawStack(IPixelSet pixelSet)
@@ -70,6 +74,7 @@ namespace Tools
                 lock (list)
                     list.Add(new Point(x,y));
                 pixelSet.AddPoint(x, y);
+                drawingArea.Redraw();
                 thread.Join(5);
             }
             else

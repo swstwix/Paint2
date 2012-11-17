@@ -25,7 +25,7 @@ namespace Paint2
             var g = e.Graphics;
             var proxyGraphics = new ProxyPixelSet(g, zoom, Width, Height);
             foreach (var tool in paintTools)
-                tool.Draw(proxyGraphics);
+                tool.Draw(proxyGraphics, this);
         }
 
         protected override void OnMouseUp(MouseEventArgs e)

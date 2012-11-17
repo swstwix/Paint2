@@ -63,12 +63,12 @@ namespace Tools
                 currentLine.OnMouseMoved(x, y);
         }
 
-        public void Draw(IPixelSet pixelSet)
+        public void Draw(IPixelSet pixelSet, IDrawingArea drawingArea)
         {
             foreach (var line in lines)
-                line.Draw(pixelSet);
+                line.Draw(pixelSet, drawingArea);
             if (currentLine != null)
-              currentLine.Draw(pixelSet);
+              currentLine.Draw(pixelSet, drawingArea);
         }
 
         bool ToBeEnd(int x, int y)

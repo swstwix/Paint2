@@ -34,7 +34,7 @@ namespace Tools
             r = (int)Math.Sqrt(Math.Abs(x - x0) * Math.Abs(x - x0) + Math.Abs(y - y0) * Math.Abs(y - y0));
         }
 
-        public void Draw(IPixelSet pixelSet)
+        public void Draw(IPixelSet pixelSet, IDrawingArea drawingArea)
         {
             if (!afterMouseClick)
                 return;
