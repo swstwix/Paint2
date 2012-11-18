@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tools.Decorators;
 using Tools.Interfaces;
 
 namespace Tools
@@ -11,41 +12,36 @@ namespace Tools
     {
         private int x, y;
         private int a, b;
-        private bool afterMouseClick = false;
-        private bool afterMouseClicked = false;
+
+        private EllipseTool() { }
+
+        public static IPaintTool Build()
+        {
+            return new UpDownPaintToolDecorator(new EllipseTool());
+        }
 
         public void OnMouseClick(int xm, int ym)
         {
-            if (afterMouseClicked)
-                return;
             x = xm;
             y = ym;
             a = 0;
             b = 0;
-            afterMouseClick = true;
         }
 
         public void OnMouseClicked(int xm, int ym)
         {
-            if (afterMouseClicked)
-                return;
             a = Math.Abs(x - xm);
             b = Math.Abs(y - ym);
-            afterMouseClicked = true;
         }
 
         public void OnMouseMoved(int xm, int ym)
         {
-            if (afterMouseClicked)
-                return;
             a = Math.Abs(x - xm);
             b = Math.Abs(y - ym);
         }
 
         public void Draw(IPixelSet pixelSet, IDrawingArea drawingArea)
         {
-            if (!afterMouseClick)
-                return;
             int col, i, row, bnew;
             long a_square, b_square, two_a_square, two_b_square, four_a_square, four_b_square, d;
 
@@ -91,10 +87,7 @@ namespace Tools
 
         private void PutPixel(IPixelSet g, int x, int y)
         {
-            if (!afterMouseClicked)
-                g.DrawPreviewPixel(x, y);
-            else
-                g.DrawPixel(x, y);
+            g.DrawPixel(x, y);
         }
     }
 }

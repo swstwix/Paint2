@@ -57,13 +57,13 @@ namespace Paint2
 
         private void CirlceButtonClick(object sender, EventArgs e)
         {
-            paintToolsCollection.Add(new CircleTool());
+            paintToolsCollection.Add(CircleTool.Build());
             Invalidate(true);
         }
 
         private void EllipseButtonClick(object sender, EventArgs e)
         {
-            paintToolsCollection.Add(new EllipseTool());
+            paintToolsCollection.Add(EllipseTool.Build());
             Invalidate(true);
         }
 
