@@ -29,7 +29,7 @@ namespace Paint2
 
         private void Line1ButtonClick(object sender, EventArgs e)
         {
-            paintToolsCollection.Add(new Line1Tool());
+            paintToolsCollection.Add(Line1Tool.Build());
             Invalidate(true);
         }
 

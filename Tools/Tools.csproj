@@ -41,6 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CircleTool.cs" />
+    <Compile Include="Decorators\AbstractPaintToolDecorator.cs" />
+    <Compile Include="Decorators\UpDownPaintToolDecorator.cs" />
     <Compile Include="EllipseTool.cs" />
     <Compile Include="EmptyTool.cs" />
     <Compile Include="Interfaces\IDrawingArea.cs" />

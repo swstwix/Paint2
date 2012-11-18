@@ -1,4 +1,5 @@
 using System;
+using Tools.Decorators;
 using Tools.Interfaces;
 
 namespace Tools
@@ -6,42 +7,36 @@ namespace Tools
     public class Line1Tool : IPaintTool
     {
         private int x0, y0, x1, y1;
-        private bool afterMouseClick = false;
-        private bool afterMouseClicked = false;
+
+        private Line1Tool(){}
+
+        public static IPaintTool Build()
+        {
+            return new UpDownPaintToolDecorator(new Line1Tool());
+        }
 
         public void OnMouseClick(int x, int y)
         {
-            if (afterMouseClicked)
-                return;
             x0 = x;
             y0 = y;
             x1 = x;
             y1 = y;
-            afterMouseClick = true;
         }
 
         public void OnMouseClicked(int x, int y)
         {
-            if (afterMouseClicked)
-                return;
             x1 = x;
             y1 = y;
-            afterMouseClicked = true;
         }
 
         public void OnMouseMoved(int x, int y)
         {
-            if (afterMouseClicked)
-                return;
             x1 = x;
             y1 = y;
         }
 
         public void Draw(IPixelSet pixelSet, IDrawingArea drawingArea)
         {
-            if (!afterMouseClick)
-                return;
-
             int a = y1 - y0;
             int b = x0 - x1;
             int c = x1 * y0 - x0 * y1;
@@ -53,10 +48,7 @@ namespace Tools
                 {
                     int x = i;
                     int y = (b == 0) ? y0 : (-c - a * i) / b ;
-                    if (afterMouseClicked)
-                        pixelSet.DrawPixel(x, y);
-                    else
-                        pixelSet.DrawPreviewPixel(x, y);
+                    pixelSet.DrawPixel(x, y);
                 }
             }
             else
@@ -66,10 +58,7 @@ namespace Tools
                 {
                     int x = (a == 0) ? x0 : (-c - b * i) / a;
                     int y = i;
-                    if (afterMouseClicked)
-                        pixelSet.DrawPixel(x, y);
-                    else
-                        pixelSet.DrawPreviewPixel(x, y);
+                    pixelSet.DrawPixel(x, y);
                 }
             }
         }
