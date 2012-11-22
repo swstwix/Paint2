@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.ActionsPanel = new System.Windows.Forms.Panel();
+            this.FillRecursiveButton = new System.Windows.Forms.Button();
             this.PolygonButton = new System.Windows.Forms.Button();
             this.ZoomDecButton = new System.Windows.Forms.Button();
             this.ClearButton = new System.Windows.Forms.Button();
@@ -39,8 +40,9 @@
             this.Line1Button = new System.Windows.Forms.Button();
             this.ZoomPanel = new System.Windows.Forms.Panel();
             this.DrawPanel = new System.Windows.Forms.Panel();
-            this.FillRecursiveButton = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.ActionsPanel.SuspendLayout();
+            this.ZoomPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // ActionsPanel
@@ -59,6 +61,16 @@
             this.ActionsPanel.Name = "ActionsPanel";
             this.ActionsPanel.Size = new System.Drawing.Size(200, 167);
             this.ActionsPanel.TabIndex = 0;
+            // 
+            // FillRecursiveButton
+            // 
+            this.FillRecursiveButton.Location = new System.Drawing.Point(86, 62);
+            this.FillRecursiveButton.Name = "FillRecursiveButton";
+            this.FillRecursiveButton.Size = new System.Drawing.Size(75, 23);
+            this.FillRecursiveButton.TabIndex = 5;
+            this.FillRecursiveButton.Text = "FillRecursive";
+            this.FillRecursiveButton.UseVisualStyleBackColor = true;
+            this.FillRecursiveButton.Click += new System.EventHandler(this.FillRecursiveButtonClick);
             // 
             // PolygonButton
             // 
@@ -144,6 +156,7 @@
             // ZoomPanel
             // 
             this.ZoomPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ZoomPanel.Controls.Add(this.listView1);
             this.ZoomPanel.Location = new System.Drawing.Point(12, 185);
             this.ZoomPanel.Name = "ZoomPanel";
             this.ZoomPanel.Size = new System.Drawing.Size(200, 177);
@@ -158,15 +171,13 @@
             this.DrawPanel.Size = new System.Drawing.Size(416, 350);
             this.DrawPanel.TabIndex = 2;
             // 
-            // FillRecursiveButton
+            // listView1
             // 
-            this.FillRecursiveButton.Location = new System.Drawing.Point(86, 62);
-            this.FillRecursiveButton.Name = "FillRecursiveButton";
-            this.FillRecursiveButton.Size = new System.Drawing.Size(75, 23);
-            this.FillRecursiveButton.TabIndex = 5;
-            this.FillRecursiveButton.Text = "FillRecursive";
-            this.FillRecursiveButton.UseVisualStyleBackColor = true;
-            this.FillRecursiveButton.Click += new System.EventHandler(this.FillRecursiveButtonClick);
+            this.listView1.Location = new System.Drawing.Point(4, 3);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(157, 169);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // Form1
             // 
@@ -179,6 +190,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.ActionsPanel.ResumeLayout(false);
+            this.ZoomPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -197,6 +209,7 @@
         private System.Windows.Forms.Panel DrawPanel;
         private System.Windows.Forms.Button PolygonButton;
         private System.Windows.Forms.Button FillRecursiveButton;
+        private System.Windows.Forms.ListView listView1;
     }
 }
 

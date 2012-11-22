@@ -74,8 +74,8 @@ namespace Tools
                 lock (list)
                     list.Add(new Point(x,y));
                 pixelSet.AddPoint(x, y);
-                drawingArea.Redraw();
                 thread.Join(5);
+                drawingArea.Redraw();
             }
             else
                 return;

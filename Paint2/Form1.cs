@@ -30,6 +30,7 @@ namespace Paint2
         private void Line1ButtonClick(object sender, EventArgs e)
         {
             paintToolsCollection.Add(Line1Tool.Build());
+            listView1.Items.Add(new ListViewItem("Line1"));
             Invalidate(true);
         }
 
@@ -51,25 +52,29 @@ namespace Paint2
 
         private void Line2ButtonClick(object sender, EventArgs e)
         {
-            paintToolsCollection.Add(new Line2Tool());
+            paintToolsCollection.Add(Line2Tool.Build());
+            listView1.Items.Add(new ListViewItem("Line2"));
             Invalidate(true);
         }
 
         private void CirlceButtonClick(object sender, EventArgs e)
         {
             paintToolsCollection.Add(CircleTool.Build());
+            listView1.Items.Add(new ListViewItem("Circle"));
             Invalidate(true);
         }
 
         private void EllipseButtonClick(object sender, EventArgs e)
         {
             paintToolsCollection.Add(EllipseTool.Build());
+            listView1.Items.Add(new ListViewItem("Ellipse"));
             Invalidate(true);
         }
 
         private void PolygonClick(object sender, EventArgs e)
         {
             paintToolsCollection.Add(new PolygonTool());
+            listView1.Items.Add(new ListViewItem("Polygon"));
             Invalidate(true);
         }
 
@@ -77,12 +82,14 @@ namespace Paint2
         {
             paintToolsCollection.Clear();
             paintToolsCollection.Add(new EmptyTool());
+            listView1.Items.Clear();
             Invalidate(true);
         }
 
         private void FillRecursiveButtonClick(object sender, EventArgs e)
         {
             paintToolsCollection.Add(new RecursiveFloodFillTool());
+            listView1.Items.Add("Recursive fill");
             Invalidate(true);
         }
 

@@ -51,6 +51,7 @@
     <Compile Include="Interfaces\IPaintToolsCollection.cs" />
     <Compile Include="Line1Tool.cs" />
     <Compile Include="Line2Tool.cs" />
+    <Compile Include="LineFloodFill.cs" />
     <Compile Include="PaintToolsCollection.cs" />
     <Compile Include="PolygonTool.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

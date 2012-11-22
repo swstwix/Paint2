@@ -9,11 +9,9 @@ namespace Tools
 {
     public class PolygonTool : IPaintTool
     {
-        private readonly IList<Line2Tool> lines = new List<Line2Tool>();
-        private Line2Tool currentLine;
+        private readonly IList<IPaintTool> lines = new List<IPaintTool>();
+        private IPaintTool currentLine;
         private int xBegin, yBegin;
-        private int x0, y0;
-        private int x1, y1;
         private bool first = true;
         private bool end = false;
 
@@ -21,8 +19,6 @@ namespace Tools
         {
             if (end)
                 return;
-            x0 = x;
-            y0 = y;
             if (!lines.Any() && first)
             {
                 xBegin = x;
@@ -42,7 +38,7 @@ namespace Tools
                 currentLine.OnMouseClicked(x, y);
                 lines.Add(currentLine);
             }
-            currentLine = new Line2Tool();
+            currentLine = Line2Tool.Build();
             currentLine.OnMouseClick(x, y);
         }
 
