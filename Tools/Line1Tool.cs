@@ -1,4 +1,5 @@
 using System;
+using Tools.Arguments;
 using Tools.Decorators;
 using Tools.Helpers;
 using Tools.Interfaces;
@@ -78,6 +79,11 @@ namespace Tools
             y0 = RotateHelper.RotateY(x0, y0, x, y);
             x1 = RotateHelper.RotateX(x1, y1, x, y);
             y1 = RotateHelper.RotateY(x1, y1, x, y);
+        }
+
+        public void Cutting(CuttingArguments cut)
+        {
+            throw new NotImplementedException();
         }
 
         public void Cutting(int minx, int maxx, int miny, int maxy)

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Tools.Arguments;
 using Tools.Interfaces;
 
 namespace Tools
@@ -83,7 +84,7 @@ namespace Tools
                 paintTool.Rotate(x, y);
         }
 
-        public void Cutting(int minx, int maxx, int miny, int maxy)
+        public void Cutting(CuttingArguments cut)
         {
             cuttingMode = true;
         }
