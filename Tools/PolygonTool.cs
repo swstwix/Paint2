@@ -8,12 +8,13 @@ namespace Tools
 {
     public class PolygonTool : IPaintTool
     {
-        private readonly IList<Line2Tool> lines = new List<Line2Tool>();
-        private Line2Tool currentLine;
+        private readonly IList<PolygonLineTool> lines = new List<PolygonLineTool>();
+        private PolygonLineTool currentLine;
         private bool cuttingMode;
         private bool end;
         private bool first = true;
         private int xBegin, yBegin;
+        private CuttingArguments cutArgs;
 
         public void OnMouseClick(int x, int y)
         {
@@ -38,7 +39,7 @@ namespace Tools
                 currentLine.OnMouseClicked(x, y);
                 lines.Add(currentLine);
             }
-            currentLine = (Line2Tool)Line2Tool.Build();
+            currentLine = new PolygonLineTool();
             currentLine.OnMouseClick(x, y);
         }
 
@@ -63,8 +64,7 @@ namespace Tools
             if (cuttingMode)
             {
                 foreach (var line in lines)
-                    line.Draw(pixelSet, drawingArea);
-                return;
+                    line.Cutting(cutArgs);
             }
             foreach (var line in lines)
                 line.Draw(pixelSet, drawingArea);
@@ -87,6 +87,7 @@ namespace Tools
         public void Cutting(CuttingArguments cut)
         {
             cuttingMode = true;
+            this.cutArgs = cut;
         }
 
         private bool ToBeEnd(int x, int y)

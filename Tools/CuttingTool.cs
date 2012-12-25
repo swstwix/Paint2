@@ -11,6 +11,7 @@ namespace Tools
         private int x1;
         private int y0;
         private int y1;
+        private CuttingArguments cutPoint;
 
         private CuttingTool()
         {
@@ -77,6 +78,7 @@ namespace Tools
 
         public void Cutting(CuttingArguments cut)
         {
+            this.cutPoint = cut;
         }
 
         public static IPaintTool Build()
