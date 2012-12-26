@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Arguments\CuttingArguments.cs" />
+    <Compile Include="BezieLine.cs" />
     <Compile Include="CircleTool.cs" />
     <Compile Include="CuttingTool.cs" />
     <Compile Include="Decorators\AbstractPaintToolDecorator.cs" />
@@ -49,6 +50,8 @@
     <Compile Include="EmptyTool.cs" />
     <Compile Include="Helpers\Otsechenie.cs" />
     <Compile Include="Helpers\RotateHelper.cs" />
+    <Compile Include="Helpers\SplineHelper.cs" />
+    <Compile Include="Interfaces\IDragAndDropPoint.cs" />
     <Compile Include="Interfaces\IDrawingArea.cs" />
     <Compile Include="Interfaces\IPixelSet.cs" />
     <Compile Include="Interfaces\IPaintTool.cs" />
@@ -61,6 +64,8 @@
     <Compile Include="PolygonTool.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecursiveFloodFillTool.cs" />
+    <Compile Include="ErmitLine.cs" />
+    <Compile Include="SplineLine.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

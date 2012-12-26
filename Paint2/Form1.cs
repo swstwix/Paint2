@@ -138,5 +138,23 @@ namespace Paint2
             outputPanel.Add(CuttingTool.Build());
             Invalidate(true);
         }
+
+        private void BezieButtonClick(object sender, EventArgs e)
+        {
+            outputPanel.Add(new BezieLine());
+            Invalidate(true);
+        }
+
+        private void ErmitButtonClick(object sender, EventArgs e)
+        {
+            outputPanel.Add(new ErmitLine());
+            Invalidate(true);
+        }
+
+        private void SplineButtonClick(object sender, EventArgs e)
+        {
+            outputPanel.Add(new SplineLine());
+            Invalidate(true);
+        }
     }
 }

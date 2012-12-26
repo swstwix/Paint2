@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.ActionsPanel = new System.Windows.Forms.Panel();
+            this.SplineButton = new System.Windows.Forms.Button();
+            this.ErmitButton = new System.Windows.Forms.Button();
+            this.BezieButton = new System.Windows.Forms.Button();
+            this.CuttingButton = new System.Windows.Forms.Button();
             this.FillLinearButton = new System.Windows.Forms.Button();
             this.RotateButton = new System.Windows.Forms.Button();
             this.LeftButton = new System.Windows.Forms.Button();
@@ -47,7 +51,6 @@
             this.ZoomPanel = new System.Windows.Forms.Panel();
             this.listView1 = new System.Windows.Forms.ListView();
             this.DrawPanel = new System.Windows.Forms.Panel();
-            this.CuttingButton = new System.Windows.Forms.Button();
             this.ActionsPanel.SuspendLayout();
             this.ZoomPanel.SuspendLayout();
             this.SuspendLayout();
@@ -55,6 +58,9 @@
             // ActionsPanel
             // 
             this.ActionsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ActionsPanel.Controls.Add(this.SplineButton);
+            this.ActionsPanel.Controls.Add(this.ErmitButton);
+            this.ActionsPanel.Controls.Add(this.BezieButton);
             this.ActionsPanel.Controls.Add(this.CuttingButton);
             this.ActionsPanel.Controls.Add(this.FillLinearButton);
             this.ActionsPanel.Controls.Add(this.RotateButton);
@@ -75,6 +81,46 @@
             this.ActionsPanel.Name = "ActionsPanel";
             this.ActionsPanel.Size = new System.Drawing.Size(330, 167);
             this.ActionsPanel.TabIndex = 0;
+            // 
+            // SplineButton
+            // 
+            this.SplineButton.Location = new System.Drawing.Point(180, 82);
+            this.SplineButton.Name = "SplineButton";
+            this.SplineButton.Size = new System.Drawing.Size(75, 23);
+            this.SplineButton.TabIndex = 10;
+            this.SplineButton.Text = "Spline";
+            this.SplineButton.UseVisualStyleBackColor = true;
+            this.SplineButton.Click += new System.EventHandler(this.SplineButtonClick);
+            // 
+            // ErmitButton
+            // 
+            this.ErmitButton.Location = new System.Drawing.Point(180, 111);
+            this.ErmitButton.Name = "ErmitButton";
+            this.ErmitButton.Size = new System.Drawing.Size(75, 23);
+            this.ErmitButton.TabIndex = 10;
+            this.ErmitButton.Text = "Ermit";
+            this.ErmitButton.UseVisualStyleBackColor = true;
+            this.ErmitButton.Click += new System.EventHandler(this.ErmitButtonClick);
+            // 
+            // BezieButton
+            // 
+            this.BezieButton.Location = new System.Drawing.Point(180, 139);
+            this.BezieButton.Name = "BezieButton";
+            this.BezieButton.Size = new System.Drawing.Size(75, 23);
+            this.BezieButton.TabIndex = 10;
+            this.BezieButton.Text = "Bezie";
+            this.BezieButton.UseVisualStyleBackColor = true;
+            this.BezieButton.Click += new System.EventHandler(this.BezieButtonClick);
+            // 
+            // CuttingButton
+            // 
+            this.CuttingButton.Location = new System.Drawing.Point(84, 141);
+            this.CuttingButton.Name = "CuttingButton";
+            this.CuttingButton.Size = new System.Drawing.Size(75, 23);
+            this.CuttingButton.TabIndex = 9;
+            this.CuttingButton.Text = "Cutting";
+            this.CuttingButton.UseVisualStyleBackColor = true;
+            this.CuttingButton.Click += new System.EventHandler(this.CuttingButtonClick);
             // 
             // FillLinearButton
             // 
@@ -253,16 +299,6 @@
             this.DrawPanel.Size = new System.Drawing.Size(416, 350);
             this.DrawPanel.TabIndex = 2;
             // 
-            // CuttingButton
-            // 
-            this.CuttingButton.Location = new System.Drawing.Point(84, 141);
-            this.CuttingButton.Name = "CuttingButton";
-            this.CuttingButton.Size = new System.Drawing.Size(75, 23);
-            this.CuttingButton.TabIndex = 9;
-            this.CuttingButton.Text = "Cutting";
-            this.CuttingButton.UseVisualStyleBackColor = true;
-            this.CuttingButton.Click += new System.EventHandler(this.CuttingButtonClick);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -301,6 +337,9 @@
         private System.Windows.Forms.Button RotateButton;
         private System.Windows.Forms.Button FillLinearButton;
         private System.Windows.Forms.Button CuttingButton;
+        private System.Windows.Forms.Button SplineButton;
+        private System.Windows.Forms.Button ErmitButton;
+        private System.Windows.Forms.Button BezieButton;
     }
 }
 

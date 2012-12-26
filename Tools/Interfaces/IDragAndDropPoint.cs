@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Tools.Interfaces
 {
-    public interface IDrawingArea : IPaintToolsCollection
+    public interface IDragAndDropPoint
     {
-        void Redraw();
-
-        IDragAndDropPoint DragDropPoint(int x, int y);
+        int X { get; }
+        int Y { get; }
     }
 }
